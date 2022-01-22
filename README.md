@@ -167,7 +167,7 @@ __Key things:__
 * The goal of text block is to enable us to declare string with multiple line with minimal escape squeance 
 and improve code readability.
 * The trailing space in each line is removed automatically. If wish to preserve it use `\s`
-* To prevent the text going to new line then use `/\`
+* To prevent the text going to new line then use `\`
 
 ```java
     String bigBlockWithNewLine = """
