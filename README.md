@@ -1,11 +1,11 @@
-#Beyond Java 8
+# Beyond Java 8
 
 Very briefly capturing some of new feature that were introduced after Java 8 that 
 may come handy for dev folks while programming.
 
-##Java 9
+## Java 9
 
-###1. Factory method for collections
+### 1. Factory method for collections
 
 A convenient factory method is introduced in the different collections
 class like Map, List, set that let us create immutable
