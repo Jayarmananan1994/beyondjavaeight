@@ -48,17 +48,17 @@ Set:
 ```java
 Set mylist = Set.of("Debian", "George", "cloney");
 ```
-####Note:
+#### Note:
 1. Returns an immutable object.(ie) you can't add or remove element.
 2. Does not accept null as argument.
 3. Set throws exception on duplicate value.
 
 
-###2. 
+### 2. 
 
-##Java 10:
+## Java 10:
 
-###1. Type inference with var
+### 1. Type inference with var
 Var keyword allow local varaible type inference. For Example
 
 ```java
@@ -80,9 +80,9 @@ var someText;
 someText = ""; //Compilation error
 ```
 
-##Java 14:
+## Java 14:
 
-###1. Switch expression
+### 1. Switch expression
 In java 13, the verbose switch statement is replaced with 
 enhanced switch experession
 
@@ -150,9 +150,9 @@ the switch expression itself in the method. Instead __yield__ is used.
 case for all possible of enum, then we dont need to provide default case!!!
 * IDE can help a lot in converting existing switch to enhanced switch expression.
 
-##Java 15:
+## Java 15:
 
-###1. Text block
+### 1. Text block
 Text block were introduced in order to declare string that span multiple line.
 The Text block can be created by putting string under thriple quates as below.
 ```java
