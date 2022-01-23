@@ -4,19 +4,18 @@ Very briefly capturing some of new/ update in API that were introduced after Jav
 may come handy for dev folks while programming.
 
 <!-- TOC start -->
-- [Beyond Java 8](#beyond-java-8)
+
   * [Java 9](#java-9)
-    + [1. Factory method for collections](#1-factory-method-for-collections)
-      - [Note:](#note)
-    + [2. Improvement in Try catch with resource](#2-improvement-in-try-catch-with-resource)
+    + [Factory method for collections](#1-factory-method-for-collections)
+    + [Improvement in Try catch with resource](#2-improvement-in-try-catch-with-resource)
   * [Java 10:](#java-10)
-    + [1. Type inference with var](#1-type-inference-with-var)
+    + [Type inference with var](#1-type-inference-with-var)
   * [Java 14:](#java-14)
-    + [1. Switch expression](#1-switch-expression)
+    + [Switch expression](#1-switch-expression)
   * [Java 15:](#java-15)
-    + [1. Text block](#1-text-block)
-    + [Java 16:](#java-16)
-  * [1. Pattern matching with instance of](#1-pattern-matching-with-instance-of)
+    + [Text block](#1-text-block)
+  * [Java 16:](#java-16)
+    + [Pattern matching with instance of](#1-pattern-matching-with-instance-of)
 <!-- TOC end -->
 
 ## Java 9
