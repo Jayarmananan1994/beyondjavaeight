@@ -1,7 +1,8 @@
 # Beyond Java 8
 
 Very briefly capturing some of new/ update in API that were introduced after Java 8 that 
-may come handy for dev folks while programming.
+may come handy for dev folks while programming. Also have created test file demonstarating 
+each APIs and playaround with it.
 
 # Table of content
 <!-- TOC start -->
@@ -238,7 +239,7 @@ void hadleVal(Obj someVal){
 Here when the predicate `someVal instanceof String` passes, then it also
 converts the `someVal` variable to String and store it in `s`
 
-Key point:
+__Key point:__
 
 * You can chain your condition to do something like this.
 ```java
