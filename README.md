@@ -3,8 +3,8 @@
 Very briefly capturing some of new/ update in API that were introduced after Java 8 that 
 may come handy for dev folks while programming.
 
+# Table of content
 <!-- TOC start -->
-
   * [Java 9](#java-9)
     + [Factory method for collections](#1-factory-method-for-collections)
     + [Improvement in Try catch with resource](#2-improvement-in-try-catch-with-resource)
