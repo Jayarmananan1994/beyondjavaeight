@@ -1,8 +1,8 @@
 # Beyond Java 8
 
 Very briefly capturing some of new/ update in API that were introduced after Java 8 that 
-may come handy for dev folks while programming. Also have created test file demonstarating 
-each APIs and playaround with it.
+may come handy for dev folks while programming. Also have created tests demonstrating 
+those APIs and playaround with it.
 
 # Table of content
 <!-- TOC start -->
