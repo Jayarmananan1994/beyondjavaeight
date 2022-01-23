@@ -8,13 +8,13 @@ may come handy for dev folks while programming.
   * [Java 9](#java-9)
     + [Factory method for collections](#1-factory-method-for-collections)
     + [Improvement in Try catch with resource](#2-improvement-in-try-catch-with-resource)
-  * [Java 10:](#java-10)
+  * [Java 10](#java-10)
     + [Type inference with var](#1-type-inference-with-var)
-  * [Java 14:](#java-14)
+  * [Java 14](#java-14)
     + [Switch expression](#1-switch-expression)
-  * [Java 15:](#java-15)
+  * [Java 15](#java-15)
     + [Text block](#1-text-block)
-  * [Java 16:](#java-16)
+  * [Java 16](#java-16)
     + [Pattern matching with instance of](#1-pattern-matching-with-instance-of)
 <!-- TOC end -->
 
