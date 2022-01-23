@@ -5,8 +5,13 @@ may come handy for dev folks while programming.
 
 # Table of contents
 
-1. [Java 9](#java-9)
-2. [Java 16](#java-16)
+1. [Java 9](#java-9) 
+    a. [Factory method for collections][#1-factory-method-for-collections]
+    b. [Improvement in Try catch with resource][#2-improvement-in-try-catch-with-resource]
+2. [Java 10](#java-10)
+3. [Java 14](#java-14)
+4. [Java 15](#java-15)
+5. [Java 16](#java-16)
 
 ## Java 9
 
