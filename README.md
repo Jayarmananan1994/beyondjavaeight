@@ -3,7 +3,10 @@
 Very briefly capturing some of new/ update in API that were introduced after Java 8 that 
 may come handy for dev folks while programming.
 
+# Table of contents
 
+1. [Java 9] (#java9)
+2. [Java 16] (#java16)
 
 ## Java 9
 
