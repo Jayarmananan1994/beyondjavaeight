@@ -5,8 +5,8 @@ may come handy for dev folks while programming.
 
 # Table of contents
 
-1. [Java 9] (#java-9)
-2. [Java 16] (#java-16)
+1. [Java 9](#java-9)
+2. [Java 16](#java-16)
 
 ## Java 9
 
