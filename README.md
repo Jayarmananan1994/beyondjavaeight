@@ -3,15 +3,21 @@
 Very briefly capturing some of new/ update in API that were introduced after Java 8 that 
 may come handy for dev folks while programming.
 
-# Table of contents
-
-1. [Java 9](#java-9) 
-    a. [Factory method for collections][#1-factory-method-for-collections]
-    b. [Improvement in Try catch with resource][#2-improvement-in-try-catch-with-resource]
-2. [Java 10](#java-10)
-3. [Java 14](#java-14)
-4. [Java 15](#java-15)
-5. [Java 16](#java-16)
+<!-- TOC start -->
+- [Beyond Java 8](#beyond-java-8)
+  * [Java 9](#java-9)
+    + [1. Factory method for collections](#1-factory-method-for-collections)
+      - [Note:](#note)
+    + [2. Improvement in Try catch with resource](#2-improvement-in-try-catch-with-resource)
+  * [Java 10:](#java-10)
+    + [1. Type inference with var](#1-type-inference-with-var)
+  * [Java 14:](#java-14)
+    + [1. Switch expression](#1-switch-expression)
+  * [Java 15:](#java-15)
+    + [1. Text block](#1-text-block)
+    + [Java 16:](#java-16)
+  * [1. Pattern matching with instance of](#1-pattern-matching-with-instance-of)
+<!-- TOC end -->
 
 ## Java 9
 
