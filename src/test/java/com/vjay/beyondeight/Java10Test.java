@@ -1,15 +1,11 @@
 package com.vjay.beyondeight;
 
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
-import java.util.stream.Collector;
-import java.util.stream.Collectors;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class Java10Test {
 
@@ -20,7 +16,6 @@ public class Java10Test {
         assertTrue(someText instanceof String);
         assertTrue(map instanceof Map);
         assertTrue(map instanceof HashMap);
-
     }
 
 }

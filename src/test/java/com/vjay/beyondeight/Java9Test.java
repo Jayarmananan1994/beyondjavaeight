@@ -1,7 +1,10 @@
 package com.vjay.beyondeight;
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+import java.io.Closeable;
+import java.io.IOException;
 import java.util.Map;
 
 import static java.util.Map.entry;
@@ -32,22 +35,27 @@ public class Java9Test {
     }
 
     @Test
-    void newSwitch() {
-        String heroName = "as";
-        printHeroDescription(heroName);
+    void improvementWithTryWithResources() {
+        MockClosableResource closableResource = new MockClosableResource();
+        try (closableResource;) {
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        Assertions.assertTrue(closableResource.isClosed);
     }
 
-    private void printHeroDescription(String name) {
-        String heroDesc = switch (name) {
-            case "Supes" -> {
-                String gg  = "";
-                yield  "Man of steel";
-            }
-            case "Batsy" -> "A great detective";
-            case "WonderWoman" -> "Demi goddess";
-            case "Flash", "QuickSilver" -> "Runs fast";
-            default -> "Not available right now";
-        };
-        System.out.println(heroDesc);
+    private static class MockClosableResource implements Closeable {
+
+        private boolean isClosed;
+
+        MockClosableResource() {
+            isClosed = false;
+        }
+
+        @Override
+        public void close() throws IOException {
+            isClosed = true;
+        }
     }
 }

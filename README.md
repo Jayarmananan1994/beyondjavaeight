@@ -1,7 +1,9 @@
 # Beyond Java 8
 
-Very briefly capturing some of new feature that were introduced after Java 8 that 
+Very briefly capturing some of new/ update in API that were introduced after Java 8 that 
 may come handy for dev folks while programming.
+
+
 
 ## Java 9
 
@@ -54,7 +56,26 @@ Set mylist = Set.of("Debian", "George", "cloney");
 3. Set throws exception on duplicate value.
 
 
-### 2. 
+### 2. Improvement in Try catch with resource
+
+From java 9, we dont have to necesarly declare the resource variable
+inside the try with resource block. any reference of Final closable reference can be passed
+as below.
+
+```java
+ MockClosableResource closableResource = new MockClosableResource();
+ try (closableResource) {
+
+ } catch (IOException e) {
+    e.printStackTrace();
+ }
+ Assertions.assertTrue(closableResource.isClosed);
+
+```
+
+__Key point__:
+* The resource variable should be final or effectively final
+* if wish to pass mutiple varaible seperate them by `;`
 
 ## Java 10:
 
@@ -180,3 +201,42 @@ and improve code readability.
 * String interpolation is not supported in text block as of now.
 
 
+### Java 16:
+
+## 1. Pattern matching with instance of
+
+An enhancement brought to get rid of instanceof-and cast idiom that we usually do in java like below.
+```java
+    void hadleVal(Obj someVal){
+        if(someVal instanceof String) {
+            String s = (String) someVal;
+            //Do some stuff...
+        }
+    }   
+```
+Instead, we can do something like below.
+```java
+void hadleVal(Obj someVal){
+        if(someVal instanceof String s) {
+            //Do some stuff with variable s...
+        }
+    }   
+```
+Here when the predicate `someVal instanceof String` passes, then it also
+converts the `someVal` variable to String and store it in `s`
+
+Key point:
+
+* You can chain your condition to do something like this.
+```java
+    if(someVal instanceof String s && s.length()>5) {
+    
+     }
+```
+* But you can't do OR condition as below. Because the resultant variable
+will be accessible only if the predicate get pass.
+```java
+    if(someVal instanceof String s || s.length()>5) { //Compilation error
+    
+     }
+```
