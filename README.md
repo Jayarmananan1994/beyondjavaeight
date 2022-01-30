@@ -17,6 +17,8 @@ those APIs and playaround with it.
     + [Text block](#1-text-block)
   * [Java 16](#java-16)
     + [Pattern matching with instance of](#1-pattern-matching-with-instance-of)
+  * [Java 17](#java-17)
+    + [Records](#1-records)
 <!-- TOC end -->
 
 ## Java 9
@@ -215,9 +217,9 @@ and improve code readability.
 * String interpolation is not supported in text block as of now.
 
 
-### Java 16:
+## Java 16:
 
-## 1. Pattern matching with instance of
+### 1. Pattern matching with instance of
 
 An enhancement brought to get rid of instanceof-and cast idiom that we usually do in java like below.
 ```java
@@ -254,3 +256,88 @@ will be accessible only if the predicate get pass.
     
      }
 ```
+
+## Java 17
+### 1. Records
+
+Record is a new type of class introduced as carried for immutable data. The main motive 
+behind introducing record is to eliminate verbose data class. 
+
+So the below long data class 
+```java
+public class Point {
+    private final int x;
+    private final int y;
+    
+    public Point(int x, int y) {
+        this.x = x;
+        this.y = y;
+    }
+    public int getX() { return x; }
+
+    public int getY() { return y; }
+
+    @Override
+    public int hashCode() { return super.hashCode(); }
+
+    @Override
+    public boolean equals(Object obj) {
+        Point point = (Point) obj;
+        return point.x == x && point.y == y;
+    }
+}
+```
+
+can be replaced by simple record as below.
+```java
+public record Point(int x, int y);
+```
+
+When declaring a record as above the following also comes with it.
+
+* private final field for each component declared in header and a getter with same name
+as the component.
+* a canonical constructor matching with params matching the header 
+* Equals, hashCode and toString method implementations
+
+Also record can have a compact constructor as below
+```java
+public record Point {
+    Point {
+        if(y<x)
+            throw InvalidCordinatesExpection();
+    }
+}
+```
+where the properties are assigned implicitly, and we can access the properties directly just like above.
+
+__Key Point:__
+* Record is final class. So Records can neither be extended nor you can add property other than mentioned in header.
+* Unlike Normal class which have a default no arg constructor, the record will have a
+default canonical constructor even thought not specified.
+* Record can also be used as local record declared inside method. 
+But unlike local class, record class don't have access to variables in enclosing method.
+
+__Serialization with record:__
+* While deserializing a normal class, usually constructor is not called. 
+That means lets say if I have some validation constructor as below,
+```java
+    public class Range {
+        private int start;
+        private int end;
+        Range(int start, int end) {
+            if(end<start) 
+                throw new InvalidRangeStateException();
+        }
+    }
+}
+```
+it is skipped during deserialization.
+* This may introduce object with inconsistent state in your application.
+* However, in java record
+Canonical constructor is called, every time a record is build. This is applicable 
+even during the deserialization. So this ensure that validation is in place everytime Range 
+object is created. This is something that Kotlin's Data or lombok does not offer.
+
+
+
