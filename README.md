@@ -120,7 +120,7 @@ someText = ""; //Compilation error
 ```
 
 ## Java 12:
-###1. Teeing
+### 1. Teeing
 
 It is a new static method introduced in Collectors class that takes two downstream collectors 
 and a bifunction that act as merger to merge the result from two.
