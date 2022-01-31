@@ -11,6 +11,8 @@ those APIs and playaround with it.
     + [Improvement in Try catch with resource](#2-improvement-in-try-catch-with-resource)
   * [Java 10](#java-10)
     + [Type inference with var](#1-type-inference-with-var)
+  * [Java 12](#java-12)
+    + [Teeing](#1-teeing)
   * [Java 14](#java-14)
     + [Switch expression](#1-switch-expression)
   * [Java 15](#java-15)
@@ -116,6 +118,47 @@ someNum = "asda"; // Compilation error
 var someText;
 someText = ""; //Compilation error
 ```
+
+## Java 12:
+###1. Teeing
+
+It is a new static method introduced in Collectors class that takes two downstream collectors 
+and a bifunction that act as merger to merge the result from two.
+
+__Use case:__
+Lets say I have a list of players record with name and points as the state,
+if we want to get player minimum and maximum point usually we may do something 
+like below.
+```java
+ var numbers = List.of(
+                new Player("A", 100),
+                new Player("B", 431),
+                new Player("C", 234),
+                new Player("D", 544),
+                new Player("E", 84)
+        );
+
+Player playerWithMinPoint = numbers
+        .stream()
+        .min(Comparator.comparing(Player::points))
+        .get();
+Player playerWithMaxPoint = numbers
+        .stream()
+        .max(Comparator.comparing(Player::points))
+        .get();
+```
+Here we are streaming the same player list twice for getting player 
+with min and max point. Now with teeing, this can be rewritten as below.
+```java
+  MinMax minMax = numbers.stream().collect(Collectors.teeing(
+                Collectors.minBy(Comparator.comparing(Player::points)),  //-> downstream collector 1
+                Collectors.maxBy(Comparator.comparing(Player::points)), //-> downstream collector 2
+                (min, max) -> new MinMax(min.get(), max.get())  // -> Merger 
+        ));
+```
+Here every element passed to the resulting collector is processed 
+by both downstream collectors, then their results are merged using 
+the specified merge function into the final result `MinMax`.
 
 ## Java 14:
 

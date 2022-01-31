@@ -17,7 +17,14 @@ public class Java12Test {
                 new Player("D", 544),
                 new Player("E", 84)
         );
-
+        Player playerWithMinPoint = numbers
+                .stream()
+                .min(Comparator.comparing(Player::points))
+                .get();
+        Player playerWithMaxPoint = numbers
+                .stream()
+                .max(Comparator.comparing(Player::points))
+                .get();
         MinMax minMax = numbers.stream().collect(Collectors.teeing(
                 Collectors.minBy(Comparator.comparing(Player::points)),
                 Collectors.maxBy(Comparator.comparing(Player::points)),
