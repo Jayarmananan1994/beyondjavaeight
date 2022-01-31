@@ -164,7 +164,7 @@ the specified merge function into the final result `MinMax`.
 
 ### 1. Switch expression
 In java 13, the verbose switch statement is replaced with 
-enhanced switch experession
+enhanced switch expression
 
 ```java
 private void printHeroDescription(String name) {
